@@ -1,0 +1,27 @@
+name: Correction
+description: Report a wrong fact, wrong code, a wrong number or a broken link
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: File and section
+      description: Which note, and which section or question?
+      placeholder: "e.g. 13_Tree.md — §5 Height of a Binary Tree"
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: Copy the wrong sentence or code here.
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What it should say
+      description: Your fix, and a link to a source if you have one.
+    validations:
+      required: true
