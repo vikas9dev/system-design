@@ -5086,10 +5086,6 @@ Why: logical databases would add a second dimension to routing (slot + database)
 
 **Fix:** Use key prefixes instead — `cache:employee:1`, `session:user:42`, etc.
 
-```java
-DEFAULT("0"), MASTER_DATA("1")   // each area gets its own DB index
-```
-
 **3. Lua scripts must use keys in the same slot**
 
 Lua scripts execute atomically on a **single node**. Suppose the script uses keys in different slots. Then Redis throws a `CROSSSLOT` error. This happens even if both slots are on the same node right now, because slots can move between nodes independently.
